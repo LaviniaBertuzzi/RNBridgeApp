@@ -6,15 +6,17 @@
  */
 
 import React from 'react';
-import { NativeModules, Button, View, StyleSheet, TouchableOpacity, Text, Platform } from 'react-native';
+import { NativeModules, View, StyleSheet, TouchableOpacity, Text, Platform } from 'react-native';
 
 const RNBridgeApp = () => {
 
+  const {AlertModule} = NativeModules
   const {ToastModule} = NativeModules
+
   const onPress = () => {
     Platform.OS === 'android'
     ? ToastModule.showToast('Android Toast on stage!')
-    : ToastModule.showToast('iOS Toast on stage!');
+    : AlertModule.showAlert('iOS Alert on stage')
   };
 
   return (
