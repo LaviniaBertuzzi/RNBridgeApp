@@ -11,11 +11,10 @@ import { NativeModules, View, StyleSheet, TouchableOpacity, Text, Platform } fro
 const RNBridgeApp = () => {
 
   const {AlertModule} = NativeModules
-  const {ToastModule} = NativeModules
 
   const onPress = () => {
     Platform.OS === 'android'
-    ? ToastModule.showToast('Android Toast on stage!')
+    ? AlertModule.showAlert('Android Alert on stage!')
     : AlertModule.showAlert('iOS Alert on stage')
   };
 

@@ -14,12 +14,11 @@ class MainApplication : Application(), ReactApplication {
     private val mReactNativeHost: ReactNativeHost = object : DefaultReactNativeHost(this) {
         override fun getUseDeveloperSupport(): Boolean = BuildConfig.DEBUG
 
-        // Packages that cannot be autolinked yet can be added manually here, for example:
-        // packages.add(new MyReactNativePackage());
         override fun getPackages(): List<ReactPackage> =
             PackageList(this).packages.apply {
-                // Packages that cannot be autolinked yet can be added manually here, for example:
-                // packages.add(new MyReactNativePackage());
+                /**
+                 * Add here native packages
+                 */
                 add(RNBridgeAppPackage())
             }
 
