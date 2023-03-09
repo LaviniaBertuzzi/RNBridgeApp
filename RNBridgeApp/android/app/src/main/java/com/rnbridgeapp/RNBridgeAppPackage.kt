@@ -8,7 +8,7 @@ import com.facebook.react.uimanager.ReactShadowNode
 import com.facebook.react.uimanager.ViewManager
 import com.rnbridgeapp.ToastModule
 
-class AppPackage : ReactPackage {
+class RNBridgeAppPackage : ReactPackage {
 
     override fun createViewManagers(
         reactContext: ReactApplicationContext
@@ -16,6 +16,6 @@ class AppPackage : ReactPackage {
 
     override fun createNativeModules(
         reactContext: ReactApplicationContext
-    ): MutableList<NativeModule> = listOf(ToastModule(reactContext)).toMutableList()
+    ): MutableList<NativeModule> = mutableListOf(ToastModule(reactContext))
 
 }
