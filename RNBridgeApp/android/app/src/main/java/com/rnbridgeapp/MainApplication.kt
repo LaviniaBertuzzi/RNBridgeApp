@@ -8,19 +8,18 @@ import com.facebook.react.ReactPackage
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint
 import com.facebook.react.defaults.DefaultReactNativeHost
 import com.facebook.soloader.SoLoader
-import com.rnbridgeapp.AppPackage
+import com.rnbridgeapp.RNBridgeAppPackage
 
 class MainApplication : Application(), ReactApplication {
     private val mReactNativeHost: ReactNativeHost = object : DefaultReactNativeHost(this) {
         override fun getUseDeveloperSupport(): Boolean = BuildConfig.DEBUG
 
-        // Packages that cannot be autolinked yet can be added manually here, for example:
-        // packages.add(new MyReactNativePackage());
         override fun getPackages(): List<ReactPackage> =
             PackageList(this).packages.apply {
-                // Packages that cannot be autolinked yet can be added manually here, for example:
-                // packages.add(new MyReactNativePackage());
-                add(AppPackage())
+                /**
+                 * Add here native packages
+                 */
+                add(RNBridgeAppPackage())
             }
 
         override protected fun getJSMainModuleName(): String? {
